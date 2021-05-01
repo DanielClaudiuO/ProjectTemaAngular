@@ -11,7 +11,7 @@ namespace ProjectTemaAngular.Data
 
     public class ProjectTemaAngularContext : DbContext
     {
-        public DbSet<ProjectTemaAngular.Models.Book> Book { get; set; }
+        public DbSet<ProjectTemaAngular.Models.Book> Books { get; set; }
         public ProjectTemaAngularContext(DbContextOptions<ProjectTemaAngularContext> options)
             : base(options)
         {

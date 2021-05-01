@@ -2,6 +2,8 @@
 
 <p>This component demonstrates fetching books from the server</p>
 
+<button class="btn btn-primary" [routerLink]="['/book-add']">Add duckbill</button>
+
 <p *ngIf="!books"><em>Loading...</em></p>
 
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="books">
@@ -19,6 +21,8 @@
       <td>{{ book.name }}</td>
       <td>{{ book.author }}</td>
       <td>{{ book.firstEdition }}</td>
+      <td> <a class="btn btn-primary" href="/book-edit?id={{book.id}}">Edit</a></td>
+      <td><button class="btn btn-primary" (click)="deleteBook(book)">Delete</button></td>
     </tr>
   </tbody>
 </table>

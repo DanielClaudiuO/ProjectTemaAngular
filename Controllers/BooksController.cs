@@ -25,14 +25,14 @@ namespace ProjectTemaAngular.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Book>>> GetBooks()
         {
-            return await _context.Book.ToListAsync();
+            return await _context.Books.ToListAsync();
         }
 
         // GET: api/Books/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Book>> GetBooks(Guid id)
         {
-            var books = await _context.Book.FindAsync(id);
+            var books = await _context.Books.FindAsync(id);
 
             if (books == null)
             {
@@ -78,7 +78,7 @@ namespace ProjectTemaAngular.Controllers
         [HttpPost]
         public async Task<ActionResult<Book>> PostBooks(Book books)
         {
-            _context.Book.Add(books);
+            _context.Books.Add(books);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetBooks", new { id = books.ID }, books);
@@ -88,13 +88,13 @@ namespace ProjectTemaAngular.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBooks(Guid id)
         {
-            var books = await _context.Book.FindAsync(id);
+            var books = await _context.Books.FindAsync(id);
             if (books == null)
             {
                 return NotFound();
             }
 
-            _context.Book.Remove(books);
+            _context.Books.Remove(books);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -102,7 +102,7 @@ namespace ProjectTemaAngular.Controllers
 
         private bool BooksExists(Guid id)
         {
-            return _context.Book.Any(e => e.ID == id);
+            return _context.Books.Any(e => e.ID == id);
         }
     }
 }

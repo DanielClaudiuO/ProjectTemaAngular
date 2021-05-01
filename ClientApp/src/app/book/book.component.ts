@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Book } from './book .models';
 
 @Component({
   selector: 'app-book',
@@ -8,16 +9,19 @@ import { HttpClient } from '@angular/common/http';
 export class BookComponent {
   public books: Book[];
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<Book[]>(baseUrl + 'api/books').subscribe(result => {
+  constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
+    this.loadBooks();
+  }
+
+  public deleteBook(book: Book) {
+    this.http.delete(this.baseUrl + 'api/books/' + book.id).subscribe(result => {
+      this.loadBooks();
+    }, error => console.error(error))
+  }
+
+  loadBooks() {
+    this.http.get<Book[]>(this.baseUrl + 'api/books').subscribe(result => {
       this.books = result;
     }, error => console.error(error));
   }
-}
-
-interface Book {
-  id: string;
-  name: string;
-  author: string;
-  firstEdition: number;
 }
