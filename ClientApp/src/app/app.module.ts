@@ -13,6 +13,9 @@ import { BookAddComponent } from './book/book-add.component';
 import { BookEditComponent } from './book/book-edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     CounterComponent,
     BookComponent,
     BookAddComponent,
-    BookEditComponent 
+    BookEditComponent,
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -35,7 +39,11 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     { path: 'book-add', component: BookAddComponent },
     { path: 'book-edit', component: BookEditComponent }
 ], { relativeLinkResolution: 'legacy' }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    MatSliderModule,
+    MatTableModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
