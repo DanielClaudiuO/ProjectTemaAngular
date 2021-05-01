@@ -11,7 +11,8 @@ import { CounterComponent } from './counter/counter.component';
 import { BookComponent } from './book/book.component';
 import { BookAddComponent } from './book/book-add.component';
 import { BookEditComponent } from './book/book-edit.component';
-//import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [
@@ -28,12 +29,13 @@ import { BookEditComponent } from './book/book-edit.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'books', component: BookComponent },
-      { path: 'book-add', component: BookAddComponent },
-      { path: 'book-edit', component: BookEditComponent }
-    ])
+    { path: '', component: HomeComponent, pathMatch: 'full' },
+    { path: 'counter', component: CounterComponent },
+    { path: 'books', component: BookComponent },
+    { path: 'book-add', component: BookAddComponent },
+    { path: 'book-edit', component: BookEditComponent }
+], { relativeLinkResolution: 'legacy' }),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
