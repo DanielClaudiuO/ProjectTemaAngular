@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
@@ -15,7 +14,9 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatTableModule } from '@angular/material/table';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatInputModule } from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,9 +41,13 @@ import { MatTableModule } from '@angular/material/table';
     MatSlideToggleModule,
     MatSliderModule,
     MatTableModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatFormFieldModule,
+    MatPaginatorModule,
+    MatInputModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+   exports: [MatFormFieldModule, MatInputModule]
 })
 export class AppModule { }
