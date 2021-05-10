@@ -32,7 +32,7 @@ export class BookEditComponent implements OnInit {
   }
   public editBook() {
     this.http.put<Book>(this.baseUrl + 'api/books/' + this.id, this.book).subscribe(result => {
-      this.router.navigateByUrl("/book");
+      this.router.navigateByUrl("/books");
     }, error => console.error(error))
 
   }

@@ -12,7 +12,7 @@ import { AfterViewInit, ViewChild } from '@angular/core';
 })
 export class BookComponent {
   public books: Book[];
-  displayedColumns: string[] = ['id', 'name', 'author', 'firstEdition', 'edit', 'delete'];
+  displayedColumns: string[] = ['id', 'name', 'author', 'firstEdition', 'actions'];
   dataSource: MatTableDataSource<Book>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

@@ -1,6 +1,30 @@
 <h1 id="tableLabel">Add Books</h1>
-Name:<input [(ngModel)]="book.name" />
-Author:<input [(ngModel)]="book.author" />
-First Edition<input [(ngModel)]="book.firstEdition" />
+
+<table class="example-full-width" cellspacing="0">
+  <tr>
+    <td>
+      <mat-form-field class="example-full-width">
+        <mat-label>Book's name</mat-label>
+        <input matInput [(ngModel)]="book.name" />
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <mat-form-field class="example-full-width">
+        <mat-label>Author</mat-label>
+        <input matInput [(ngModel)]="book.author" />
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <mat-form-field class="example-full-width">
+        <mat-label>First Edition</mat-label>
+        <input matInput [(ngModel)]="book.firstEdition" />
+      </mat-form-field>
+    </td>
+  </tr>
+</table>
 
 <button class="btn btn-primary" (click)="saveBook()">Save Book</button>

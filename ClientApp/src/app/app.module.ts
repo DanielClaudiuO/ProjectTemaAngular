@@ -10,6 +10,7 @@ import { BookComponent } from './book/book.component';
 import { BookAddComponent } from './book/book-add.component';
 import { BookEditComponent } from './book/book-edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSliderModule } from '@angular/material/slider';
@@ -17,6 +18,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +50,11 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonToggleModule,
     MatFormFieldModule,
     MatPaginatorModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule,
+    MatListModule,
+    MatIconModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent],

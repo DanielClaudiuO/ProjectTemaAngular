@@ -13,6 +13,8 @@
       <th>Name</th>
       <th>Author</th>
       <th>FirstEdition</th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -58,15 +60,26 @@
     <td mat-cell *matCellDef="let book"> {{book.firstEdition}} </td>
   </ng-container>
 
-  <ng-container matColumnDef="edit">
-    <th mat-header-cell *matHeaderCellDef> Edit </th>
-    <td mat-cell *matCellDef="let book"> <a class="btn btn-primary" href="/book-edit?id={{book.id}}">Edit</a></td>
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef style="width:15%">Actions</th>
+    <td mat-cell *matCellDef="let book">
+
+      <section>
+        <div class="example-button-row">
+          <a  href="/book-edit?id={{book.id}}">
+            <button mat-icon-button color="accent" aria-label="Example icon button with a home icon" matTooltip="Edit">
+              <mat-icon aria-hidden="false" aria-label="Example home icon" [routerLink]="['/book-edit',book.id]" style="cursor:pointer">edit</mat-icon>
+            </button>
+          </a>
+          <button mat-icon-button color="accent" aria-label="Example icon button with a home icon" matTooltip="Delete">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="deleteBook(book)" style="cursor:pointer">delete</mat-icon>
+          </button>
+
+        </div>
+      </section>
+    </td>
   </ng-container>
 
-  <ng-container matColumnDef="delete">
-    <th mat-header-cell *matHeaderCellDef> Delete </th>
-    <td mat-cell *matCellDef="let book"><button class="btn btn-primary" (click)="deleteBook(book)">Delete</button></td>
-  </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

@@ -8,8 +8,6 @@ import { Router } from '@angular/router';
   templateUrl: './book-add.component.html'
 })
 export class BookAddComponent {
-  
-
   public book: Book = <Book>{};
 
   constructor(
